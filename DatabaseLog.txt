@@ -1,0 +1,39 @@
+Database Logs
+
+user	--	User
+Column:
+id			(INT)			-> User ID
+username	(VARCHAR(255))	-> Username
+password	(VARCHAR(33))	-> Password User	(MD5)
+
+
+
+
+feeds	--	Postingan User
+Column:
+id			(INT)			-> Image ID
+user_id		(INT)			-> ID yang upload
+caption		(VARCHAR(255))	-> Caption Imagenya
+url_path	(VARCHAR(255))	-> Lokasi Image dalam Server
+created_at	(TIMESTAMP)		-> Waktu Upload
+
+
+
+
+likes	--	Penghitung Like
+Column:
+id			(INT)			-> Like ID
+feeds_id	(INT)			-> ID Feedsnya
+who_is		(INT)			-> ID yang ngelike
+total		(INT)			-> Total Like
+created_at	(TIMESTAMP)		-> Waktu Ngelike
+
+
+
+comments--	Penghitung Comment
+Column:
+id			(INT)			-> Comment ID
+feeds_id	(INT)			-> ID Feedsnya
+who_is		(INT)			-> ID yang komen
+comment 	(VARCHAR(255))	-> Isi Komentar
+created_at	(TIMESTAMP)		-> Waktu Ngekomen
