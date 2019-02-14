@@ -37,7 +37,7 @@
 
 	
 	
-	<script src="script/main.js" type="text/javascript"></script>
+	<script src="script/vannila-es.10.js" type="text/javascript"></script>
 </body>
 </html>
 
