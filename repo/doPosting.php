@@ -9,7 +9,8 @@
     $location = "../storage/";
     $save = $location.$file['name'];
     $loc = "storage/".$file['name'];
-    $kkk = $file['name'];
+
+    
     if(strpos($file['name'], ".jpg") === false && strpos($file['name'], ".png") === false && strpos($file['name'], ".jpeg") === false)
     {
         header('Location: ../index.php?err=The File must jpg, png, or jpeg!!!');
@@ -17,6 +18,7 @@
     {
         $query = "INSERT INTO `feeds`(`user_id`, `caption`, `url_path`) VALUES ('$user', '$capt', '$loc')";
         mysqli_query($con, $query);
-        move_uploaded_file($file['tmp_name'], $location);
+        move_uploaded_file($file['tmp_name'], $save);
         header('Location: ../dashboard.php');
+        
     }
