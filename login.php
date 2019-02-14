@@ -16,7 +16,7 @@
 <body>
 	<h1>Login</h1>
 	<form action="repo/doLogin.php" method="POST">
-		<input type="text" name="username" placeholder="username" /><br />
+		<input type="text" name="username" placeholder="username" autofocus /><br />
 		<input type="password" name="password" placeholder="password" /><br />
 		<input type="submit" name="" value="Login" />
 		
