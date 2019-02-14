@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2019 at 06:05 PM
+-- Generation Time: Feb 14, 2019 at 07:24 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -66,13 +67,23 @@ CREATE TABLE IF NOT EXISTS `feeds` (
   `url_path` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- RELATIONSHIPS FOR TABLE `feeds`:
 --   `user_id`
 --       `user` -> `id`
 --
+
+--
+-- Dumping data for table `feeds`
+--
+
+INSERT INTO `feeds` (`id`, `user_id`, `caption`, `url_path`, `created_at`) VALUES
+(1, 10, 'dada', 'storage/Ace.(Final.Fantasy.Type-0).full.1043778.jpg', '2019-02-14 17:16:17'),
+(2, 6, 'Doge is fanny', 'storage/doge-27302-1920x1080 (1).jpg', '2019-02-14 18:00:36'),
+(3, 6, 'niganiga', 'storage/smile_1-512.png', '2019-02-14 18:11:36'),
+(4, 12, 'Nununuuuuuuuuu aQoE KnG3n qmhhhhhhhhh :* :* :*', 'storage/NU.png', '2019-02-14 18:17:53');
 
 -- --------------------------------------------------------
 
@@ -159,6 +170,40 @@ ALTER TABLE `feeds`
 ALTER TABLE `likes`
   ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`feeds_id`) REFERENCES `feeds` (`id`),
   ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`who_is`) REFERENCES `user` (`id`);
+
+
+--
+-- Metadata
+--
+USE `phpmyadmin`;
+
+--
+-- Metadata for table comments
+--
+
+--
+-- Metadata for table feeds
+--
+
+--
+-- Metadata for table likes
+--
+
+--
+-- Metadata for table user
+--
+
+--
+-- Dumping data for table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'fakeig', 'user', '{\"sorted_col\":\"`user`.`password`  DESC\"}', '2019-02-13 16:59:40');
+
+--
+-- Metadata for database fakeig
+--
+SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

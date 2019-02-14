@@ -34,3 +34,9 @@ CHANGE LOG:
 12# Editing Storage
 13# Adding repo/doPosting.php
 	--Still got error on $Query
+14# Edited Query on doPosting.php
+	--Logical Query Error Fixed
+	--Logical move_file function error fixed
+15# Added dashboard.php
+	--Don't force me to do UI design here 
+16# Added doLike.php and doComment.php
