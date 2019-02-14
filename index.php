@@ -20,9 +20,10 @@
 	<script src="script/textareaTrigger.js" type="text/javascript"></script>
 </head>
 <body>
-	
+	<span>Hi <?= $_SESSION['user'] ?></span>&nbsp
 	<a href="repo/doLogout.php"><button>Logout</button></a>
 	<h1>In-Gram</h1>
+	<a href="dashboard.php">Dashboard</a>
 	<form action="repo/doPosting.php" method="POST" id="Upload_Form" enctype="multipart/form-data">
 		<img class="imageBox" src="storage/alt/src.png" /> <br />
 		<input type="file" id="foto" name="fileBox" /><br />
